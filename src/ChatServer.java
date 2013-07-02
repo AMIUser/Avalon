@@ -36,6 +36,12 @@ public class ChatServer extends UnicastRemoteObject implements ChatServerInterfa
 		roomParticipants.add(nameOfClient);
 		return "INFO:  " + nameOfClient + " has been added to " + nameOfRoom;
 	}
+	
+	@Override
+	public String joinRoom(String nameOfClient) throws RemoteException {
+		roomParticipants.add(nameOfClient);
+		return "INFO:  " + nameOfClient + " has been added to " + nameOfRoom;
+	}
 
 	@Override
 	public void talk(String nameOfClient, String text) throws RemoteException {
